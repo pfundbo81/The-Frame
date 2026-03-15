@@ -199,7 +199,6 @@
             position: relative;
         }
 
-        /* ANFRAGE ÜBERSCHRIFT IM MODAL */
         #contact-form h2 {
             color: black !important;
             border: none;
@@ -243,7 +242,7 @@
         }
 
         input:focus, textarea:focus {
-            border-bottom-color: black; /* Fokus-Linie auch schwarz */
+            border-bottom-color: black;
         }
 
         .newsletter-group {
@@ -278,9 +277,8 @@
             text-decoration: underline;
         }
 
-        /* ANFRAGE SENDEN BUTTON */
         .submit-button {
-            background: black; /* Hintergrund auf Schwarz geändert */
+            background: black;
             color: white;
             border: none;
             padding: 18px;
@@ -288,11 +286,16 @@
             font-family: 'Arial Black';
             text-transform: uppercase;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: all 0.2s;
         }
 
         .submit-button:hover {
             opacity: 0.8;
+        }
+
+        .submit-button:disabled {
+            background: #666;
+            cursor: not-allowed;
         }
 
         #success-message {
@@ -410,24 +413,32 @@
         const modal = document.getElementById('contact-modal');
         const form = document.getElementById('contact-form');
         const successBox = document.getElementById('success-message');
+        const submitBtn = document.getElementById('submit-btn');
 
         function openModal() {
-            modal.style.display = 'flex';
+            // IMMER beim Öffnen alles auf Anfang
             form.style.display = 'block'; 
             successBox.style.display = 'none'; 
+            submitBtn.innerText = 'Anfrage Senden';
+            submitBtn.disabled = false;
+
+            modal.style.display = 'flex';
             setTimeout(() => modal.classList.add('open'), 10);
         }
 
         function closeModal() {
             modal.classList.remove('open');
-            setTimeout(() => modal.style.display = 'none', 400);
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 400);
         }
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
-            const btn = document.getElementById('submit-btn');
-            btn.innerText = 'SENDET...';
-            btn.disabled = true;
+            
+            // Sofortige Reaktion des Buttons
+            submitBtn.innerText = 'SENDET...';
+            submitBtn.disabled = true;
 
             const isChecked = document.getElementById('newsletter_cb').checked;
             const statusText = isChecked ? "JA!" : "Nein.";
@@ -440,14 +451,20 @@
 
             emailjs.send('service_voh18m2', 'template_gbcjzll', templateParams)
                 .then(function() {
+                    // Erfolg
                     form.style.display = 'none';
                     successBox.style.display = 'block';
                     form.reset(); 
+                    
+                    // Button im Hintergrund für das nächste Mal vorbereiten
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Anfrage Senden';
+                    
                     setTimeout(closeModal, 5000);
                 }, function(error) {
-                    alert("Fehler!");
-                    btn.disabled = false;
-                    btn.innerText = 'Anfrage Senden';
+                    alert("Fehler beim Senden! Bitte prüfe deine Internetverbindung.");
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'Anfrage Senden';
                 });
         });
 
