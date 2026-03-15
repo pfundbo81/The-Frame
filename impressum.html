@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE FRAME | Impressum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f8f8f8;
+            --frame-color: #FF2A00;
+            --box-size: 100px; 
+            --text-color: #333; 
+            --border-color: #e0e0e0; 
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            font-family: 'Arial', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        .animated-block {
+            position: absolute;
+            background-color: var(--frame-color);
+            left: 10%;
+            width: var(--box-size);
+            top: 0; 
+            height: 120px; 
+            z-index: 10;
+        }
+
+        .header-area {
+            position: relative;
+            padding: 40px 10% 20px calc(10% + var(--box-size) + 20px);
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Hauptüberschrift auf Schwarz gesetzt */
+        h1 {
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            color: black; 
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .content-area {
+            padding: 50px 10% 100px 10%;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* Unterüberschriften und deren Rahmen auf Schwarz gesetzt */
+        h2 {
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            color: black;
+            margin-top: 40px;
+            border-bottom: 2px solid black;
+            display: inline-block;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--frame-color);
+        }
+
+        footer {
+            padding: 40px 10%;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-family: 'Arial Black', sans-serif;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="animated-block"></div>
+
+        <div class="header-area">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Zurück</a>
+            <h1>Impressum</h1>
+        </div>
+
+        <div class="content-area">
+            <h2>Angaben gemäß § 5 TMG</h2>
+            <p><strong>THE FRAME – Graffiti Workshops</strong><br>
+            [Vorname Nachname]<br>
+            [Straße Hausnummer]<br>
+            [PLZ] Bochum</p>
+
+            <h2>Kontakt</h2>
+            <p>E-Mail: graffworkshopbochum@gmail.com</p>
+
+            <h2>Redaktionell verantwortlich</h2>
+            <p>[Vorname Nachname]<br>
+            [Straße Hausnummer]<br>
+            [PLZ] Bochum</p>
+
+            <h2>EU-Streitschlichtung</h2>
+            <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" style="color: var(--frame-color);">https://ec.europa.eu/consumers/odr/</a>.<br>Unsere E-Mail-Adresse findest du oben im Impressum.</p>
+
+            <h2>Verbraucherstreitbeilegung/ Universalschlichtungsstelle</h2>
+            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        </div>
+
+        <footer>
+            &copy; 2026 THE FRAME BOCHUM
+        </footer>
+    </div>
+
+</body>
+</html>

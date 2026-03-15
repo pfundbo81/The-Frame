@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE FRAME | Datenschutz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f8f8f8;
+            --frame-color: #FF2A00;
+            --box-size: 100px; 
+            --text-color: #333; 
+            --border-color: #e0e0e0; 
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            font-family: 'Arial', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        .animated-block {
+            position: absolute;
+            background-color: var(--frame-color);
+            left: 10%;
+            width: var(--box-size);
+            top: 0; 
+            height: 120px; 
+            z-index: 10;
+        }
+
+        .header-area {
+            position: relative;
+            padding: 40px 10% 20px calc(10% + var(--box-size) + 20px);
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Hauptüberschrift auf Schwarz */
+        h1 {
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            color: black; 
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .content-area {
+            padding: 50px 10% 100px 10%;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* Unterüberschriften und Rahmen auf Schwarz */
+        h2 {
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            color: black;
+            margin-top: 40px;
+            border-bottom: 2px solid black;
+            display: inline-block;
+        }
+
+        /* H3 ebenfalls auf Schwarz */
+        h3 {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1rem;
+            margin-top: 25px;
+            color: black;
+        }
+
+        p, li {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--frame-color);
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        footer {
+            padding: 40px 10%;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-family: 'Arial Black', sans-serif;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="animated-block"></div>
+
+        <div class="header-area">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Zurück</a>
+            <h1>Datenschutz</h1>
+        </div>
+
+        <div class="content-area">
+            <p>Verantwortlich im Sinne der Datenschutzgesetze ist:</p>
+            <p><strong>THE FRAME – Graffiti Workshops</strong><br>
+            [Vorname Nachname]<br>
+            [Straße Hausnummer]<br>
+            [PLZ] Bochum<br>
+            E-Mail: graffworkshopbochum@gmail.com</p>
+
+            <h2>1. Datenerfassung auf unserer Website</h2>
+            <h3>Kontaktformular</h3>
+            <p>Wenn du uns per Kontaktformular Anfragen zukommen lässt, werden deine Angaben aus dem Anfrageformular inklusive der von dir dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage gespeichert. Wir nutzen hierfür den Dienst <strong>EmailJS</strong>.</p>
+
+            <h3>Newsletter-Daten</h3>
+            <p>Wenn du den Newsletter beziehst, nutzen wir deine E-Mail-Adresse ausschließlich für diesen Zweck. Eine Abmeldung ist jederzeit möglich.</p>
+
+            <h2>2. Drittanbieter & Tools</h2>
+            <p>Wir verwenden <strong>EmailJS</strong> für den Formularversand sowie Google Fonts und FontAwesome für das Design. Diese Dienste verarbeiten Daten gemäß DSGVO-Standards.</p>
+
+            <h2>3. Deine Rechte</h2>
+            <p>Du hast das Recht auf Auskunft, Berichtigung, Sperrung oder Löschung deiner Daten. Kontaktiere uns dazu einfach per E-Mail.</p>
+        </div>
+
+        <footer>
+            &copy; 2026 THE FRAME BOCHUM
+        </footer>
+    </div>
+
+</body>
+</html>
