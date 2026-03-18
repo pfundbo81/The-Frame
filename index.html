@@ -99,6 +99,15 @@
             color: var(--frame-color);
         }
 
+        /* SPEZIELLE ANPASSUNG FÜR DEN TREFFPUNKT */
+        .adresse h2 {
+            color: black;            /* Schrift in Schwarz */
+            font-size: 0.85rem;      /* Etwas kleiner */
+            text-transform: none;    /* Groß- und Kleinschreibung erlauben */
+            border-bottom: 1px solid #ccc; /* Optional: dünnere Linie passend zur Größe */
+            font-family: 'Arial', sans-serif; /* Etwas schlichter für bessere Lesbarkeit */
+        }
+
         .event-list {
             list-style: none;
             padding: 0;
@@ -348,25 +357,24 @@
                     <div class="event-item"><span>DO 09.04.</span> <span>14:00 UHR</span></div>
                     <div class="event-item"><span>FR 10.04.</span> <span>13:00 UHR</span></div>
                     <div class="event-item"><span>SA 11.04.</span> <span>14:00 UHR</span></div>
-                      <div class="event-item"><span>FR 15.05.</span> <span>13:00 UHR</span></div>
+                    <div class="event-item"><span>FR 15.05.</span> <span>13:00 UHR</span></div>
                     <div class="event-item"><span>SA 16.05.</span> <span>14:00 UHR</span></div>
                     <div class="event-item"><span>FR 05.06.</span> <span>13:00 UHR</span></div>
-                     <div class="event-item"><span>SA 06.06.</span> <span>14:00 UHR</span></div>
-                      <div class="event-item"><span>FR 19.06.</span> <span>13:00 UHR</span></div>
-                     <div class="event-item"><span>SA 20.06.</span> <span>14:00 UHR</span></div>
-                      <div class="event-item"><span>MI 22.07.</span> <span>14:00 UHR</span></div>
-                      <div class="event-item"><span>DO 23.07.</span> <span>14:00 UHR</span></div>
-                     <div class="event-item"><span>FR 24.07.</span> <span>13:00 UHR</span></div>
+                    <div class="event-item"><span>SA 06.06.</span> <span>14:00 UHR</span></div>
+                    <div class="event-item"><span>FR 19.06.</span> <span>13:00 UHR</span></div>
+                    <div class="event-item"><span>SA 20.06.</span> <span>14:00 UHR</span></div>
+                    <div class="event-item"><span>MI 22.07.</span> <span>14:00 UHR</span></div>
+                    <div class="event-item"><span>DO 23.07.</span> <span>14:00 UHR</span></div>
+                    <div class="event-item"><span>FR 24.07.</span> <span>13:00 UHR</span></div>
                     <div class="event-item"><span>MI 21.10.</span> <span>14:00 UHR</span></div>
-                      <div class="event-item"><span>DO 22.10.</span> <span>14:00 UHR</span></div>
-                     <div class="event-item"><span>FR 23.10.</span> <span>13:00 UHR</span></div>
-                    
+                    <div class="event-item"><span>DO 22.10.</span> <span>14:00 UHR</span></div>
+                    <div class="event-item"><span>FR 23.10.</span> <span>13:00 UHR</span></div>
                 </div>
             </div>
-<div class="adresse">
-                <h2>Treffpunkt: Sold Out Gallery U Bahn Station Schauspielhaus, Hattinger Str. 0, 44789 Bochum</h2>    </div>
-                
 
+            <div class="adresse">
+                <h2>Treffpunkt: Sold Out Gallery, U-Bahn Station Schauspielhaus, Hattinger Str. 0, 44789 Bochum</h2>
+            </div>
             <div class="contact-box">
                 <h2>Booking / Anmeldung</h2>
                 <a href="javascript:void(0)" onclick="openModal()" class="email-link">graffworkshopbochum@gmail.com</a>
@@ -432,7 +440,6 @@
         const submitBtn = document.getElementById('submit-btn');
 
         function openModal() {
-            // IMMER beim Öffnen alles auf Anfang
             form.style.display = 'block'; 
             successBox.style.display = 'none'; 
             submitBtn.innerText = 'Anfrage Senden';
@@ -452,7 +459,6 @@
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            // Sofortige Reaktion des Buttons
             submitBtn.innerText = 'SENDET...';
             submitBtn.disabled = true;
 
@@ -467,12 +473,10 @@
 
             emailjs.send('service_voh18m2', 'template_gbcjzll', templateParams)
                 .then(function() {
-                    // Erfolg
                     form.style.display = 'none';
                     successBox.style.display = 'block';
                     form.reset(); 
                     
-                    // Button im Hintergrund für das nächste Mal vorbereiten
                     submitBtn.disabled = false;
                     submitBtn.innerText = 'Anfrage Senden';
                     
