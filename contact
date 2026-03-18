@@ -363,9 +363,12 @@
                     
                 </div>
             </div>
+<div class="contact-box">
+                <h2>Treffpunkt: Sold Out Gallery U Bahn Station Schauspielhaus, Hattinger Str. 0, 44789 Bochum</h2>    </div>
+                
 
             <div class="contact-box">
-                <h2>Booking</h2>
+                <h2>Booking / Anmeldung</h2>
                 <a href="javascript:void(0)" onclick="openModal()" class="email-link">graffworkshopbochum@gmail.com</a>
             </div>
 
